@@ -10,8 +10,6 @@
 	<!-- 设置默认配置方案 -->
 	<annotation-driven />
 
-	<!-- 资源映射 -->
-	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- 视图解析器 -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -19,7 +17,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	<!-- 扫描注解，初始化bean -->
-	<context:component-scan base-package="com.framework.test" />
+	<context:component-scan base-package="com.framework.test.controller" />
 	
 	
 	

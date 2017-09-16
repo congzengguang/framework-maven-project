@@ -1,6 +1,7 @@
-package com.framework.test;
+package com.framework.test.controller;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
@@ -12,28 +13,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * ´¦ÀíÓ¦ÓÃ³ÌĞòÖ÷Ò³µÄÇëÇó
+ * å¤„ç†åº”ç”¨ç¨‹åºä¸»é¡µçš„è¯·æ±‚
  */
 @Controller
+@RequestMapping("home")
 public class HomeController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+
 	/**
-	 * Ö»Ğè·µ»ØÆäÃû³Æ¼´¿ÉÑ¡ÔñÒª³ÊÏÖµÄÖ÷Ò³ÊÓÍ¼
+	 * åªéœ€è¿”å›å…¶åç§°å³å¯é€‰æ‹©è¦å‘ˆç°çš„ä¸»é¡µè§†å›¾
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
+		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
+		String formattedDate = formater.format(date);
+
 		model.addAttribute("serverTime", formattedDate );
-		
+
 		return "home";
 	}
-	
+
 }
