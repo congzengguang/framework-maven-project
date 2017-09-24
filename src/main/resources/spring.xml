@@ -10,9 +10,8 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
-
-
-<!-- 配置进行解密  -->
+		
+	<!-- 配置进行解密  -->
 	<bean id="propertyConfigurer" class="com.framework.test.plugin.EncryptPropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
@@ -20,7 +19,7 @@
 			</list>
 		</property>
 	</bean>
-
+	<context:component-scan base-package="com.framework.test.service"></context:component-scan>
 	<!-- 主库数据源 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
 		<!-- 基本属性 url、user、password -->
