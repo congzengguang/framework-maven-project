@@ -11,10 +11,10 @@ import java.security.SecureRandom;
 
 /**
  * AES??????
- *
  */
 public class AESUtil {
     private static final String encodeRules = "framework-maven-project";
+
     public static String AESEncode(String content) {
         try {
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
@@ -58,11 +58,9 @@ public class AESUtil {
 
     }
 
-
-
     public static void main(String[] args) {
         String[] keys = {
-                "", "123456","root"
+                "", "123456", "root"
         };
         System.out.println("key | AESEncode | AESDecode");
         for (String key : keys) {
