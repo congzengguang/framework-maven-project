@@ -10,7 +10,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.security.SecureRandom;
 
 /**
- * AES??????
+ * AES加解密工具类
  */
 public class AESUtil {
     private static final String encodeRules = "framework-maven-project";
